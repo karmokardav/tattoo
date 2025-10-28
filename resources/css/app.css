@@ -1,1 +1,30 @@
 @import 'tailwindcss';
+
+
+  .scroll-column {
+    height: 600px;
+    overflow: hidden;
+  }
+
+  .scroll-column .inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @keyframes scrollUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+
+  @keyframes scrollDown {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+  }
+
+  .scroll-up .inner {
+    animation: scrollUp 40s linear infinite;
+  }
+
+  .scroll-down .inner {
+    animation: scrollDown 40s linear infinite;
+  }
