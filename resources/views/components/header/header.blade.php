@@ -1,4 +1,4 @@
-<section class="flex justify-between items-center px-8 py-4 text-white w-full bg-[#181818] border-b border-[#939393]/40 sticky top-0">
+<section class="flex justify-between items-center px-8 py-4 text-white w-full bg-[#181818] border-b border-[#939393]/40 sticky top-0 z-10">
     <!-- Logo -->
     <a href="/" class="text-2xl font-bold tracking-wider">InkStory</a>
 

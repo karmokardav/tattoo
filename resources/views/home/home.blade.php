@@ -9,5 +9,6 @@
     @include('components.gallery.gallery')
     @include('components.blog.blog')
     @include('components.about.about')
+    @include('components.footer.footer')
   </main>
 @endsection
