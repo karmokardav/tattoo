@@ -5,3 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [UserController::class, 'home'])->name('home');
+
+Route::get("/gallery", function () {
+    return view("gallery.gallery");
+});
