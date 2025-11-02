@@ -5,34 +5,44 @@
     <section class="bg-[#393738] font-sans">
         <!-- Sidebar -->
         <div class="flex h-screen">
-            <aside class="w-64 bg-[#181818] text-white flex flex-col">
+            <aside class="w-64 bg-[#181818] text-white flex flex-col  hidden md:block">
                 <div class="px-9 py-7 text-2xl font-bold border-b border-[#939393]/40">
                     InkMaster
                 </div>
                 <nav class="flex-1 p-6 space-y-3">
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">Dashboard</a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">Home</a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">Gallery</a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">Blog</a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">About</a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">Contact</a>
+                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">
+                        <i class="fa-solid fa-bars mr-2 text-white"></i> Dashboard
+                    </a>
+                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]"><i
+                            class="fa-solid fa-house mr-2 text-white"></i> Home</a>
+                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">
+                        <i class="fa-regular fa-image mr-2 text-white"></i> Gallery
+                    </a>
+                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">
+                        <i class="fa-solid fa-blog mr-2 text-white"></i> Blog
+                    </a>
+                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]"><i
+                            class="fa-solid fa-info-circle mr-2 text-white"></i> About</a>
+                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]"><i
+                            class="fa-regular fa-envelope mr-2 text-white"></i> Contact</a>
                 </nav>
-                <div class="p-6 border-t border-gray-700">
-                    <button class="w-full py-2 px-3 bg-[#9c1428] hover:bg-[#7d7d7d] text-white border-t border-[#939393]/40">Logout</button>
+                <div class="p-6 border-t border-gray-700 mt-24">
+                    <button
+                        class="w-full py-2 px-3 bg-[#9c1428] hover:bg-[#7d7d7d] text-white border-t border-[#939393]/40">Logout</button>
                 </div>
             </aside>
-
-            <!-- Main content -->
             <div class="flex-1 flex flex-col">
-
-                <!-- Navbar -->
                 <header class="flex justify-between items-center bg-[#9c1428] border-b border-[#939393]/40 p-6">
-                    <h1 class="text-2xl font-bold text-white">Dashboard</h1>
+                    <h1 class="text-2xl font-bold text-white"><i class="fa-solid fa-bars mr-2"></i>Dashboard</h1>
                     <div class="flex items-center gap-4">
-                        <input type="text" placeholder="Search..." class="border  px-3 py-1 focus:outline-none" />
-                        <div
-                            class="w-10 h-10 -full bg-gray-300 flex items-center justify-center text-gray-700 font-bold">
-                            a</div>
+                        <a href=""><i class="fa-regular fa-bell text-white"></i></i></a>
+                        <a href=""><i class="fa-regular fa-message text-white"></i></i></a>
+                        <a href="">
+                            <div class="flex gap-2 items-center">
+                                <h1 class="text-white">Shuvo</h1>
+                                <img src="{{ asset('images/tattoo1.jpg') }}" alt="" class="w-10 h-10 rounded-full">
+                            </div>
+                        </a>
                     </div>
                 </header>
 
@@ -53,7 +63,5 @@
                 </div>
             </div>
         </div>
-
     </section>
-
 @endsection
