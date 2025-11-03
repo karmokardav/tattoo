@@ -15,3 +15,6 @@ Route::get("/blog", function () {
 Route::get("/dashboard", function () {
     return view("dashboard.dashboard");
 });
+Route::get("/contact", function () {
+    return view("contact.contact");
+});

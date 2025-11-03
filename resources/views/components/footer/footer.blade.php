@@ -19,7 +19,7 @@
                     <p class="text-white py-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
                         sed
                         officiis odio, quos ut temporibus quas delectus praesentium tempore dolores?</p>
-                    <div class="flex space-x-3">
+                    <div class="flex gap-3">
                         <a href=""><i class="fa-brands fa-whatsapp text-white"></i></a>
                         <a href=""><i class="fa-brands fa-instagram text-white"></i></a>
                         <a href=""><i class="fa-brands fa-facebook text-white"></i></a>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="pt-8">
-                    <ul class="space-y-4">
+                    <ul class="flex flex-col gap-4">
                         <li class="text-[#9c1428]">Navigation</li>
                         <li><a href="/" class="hover:text-[#9c1428] text-white">Home</a></li>
                         <li><a href="/gallery" class="hover:text-[#9c1428] text-white">Gallery</a></li>
