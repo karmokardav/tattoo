@@ -3,7 +3,7 @@
     <a href="/" class="text-2xl font-bold tracking-wider">InkStory</a>
 
     <!-- Menu -->
-    <ul class="hidden md:flex space-x-8 text-lg">
+    <ul class="hidden md:flex gap-8 text-lg">
         <li><a href="/" class="hover:text-[#9c1428]">Home</a></li>
         <li><a href="/gallery" class="hover:text-[#9c1428]">Gallery</a></li>
         <li><a href="/blog" class="hover:text-[#9c1428]">Blog</a></li>

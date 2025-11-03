@@ -5,30 +5,35 @@
     <section class="bg-[#393738] font-sans">
         <!-- Sidebar -->
         <div class="flex h-screen">
-            <aside class="w-64 bg-[#181818] text-white flex flex-col  hidden md:block">
+            <aside class="w-64 bg-[#181818] text-white flex flex-col hidden md:flex">
                 <div class="px-9 py-7 text-2xl font-bold border-b border-[#939393]/40">
                     InkMaster
                 </div>
-                <nav class="flex-1 p-6 space-y-3">
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">
+                <nav class="flex-1 p-6">
+                    <a href="#" class="block py-3 px-3 hover:bg-[#9c1428]">
                         <i class="fa-solid fa-bars mr-2 text-white"></i> Dashboard
                     </a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]"><i
-                            class="fa-solid fa-house mr-2 text-white"></i> Home</a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">
+                    <a href="#" class="block py-3 px-3 hover:bg-[#9c1428]">
+                        <i class="fa-solid fa-house mr-2 text-white"></i> Home
+                    </a>
+                    <a href="/gallery" class="block py-3 px-3 hover:bg-[#9c1428]">
                         <i class="fa-regular fa-image mr-2 text-white"></i> Gallery
                     </a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]">
+                    <a href="#" class="block py-3 px-3 hover:bg-[#9c1428]">
                         <i class="fa-solid fa-blog mr-2 text-white"></i> Blog
                     </a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]"><i
-                            class="fa-solid fa-info-circle mr-2 text-white"></i> About</a>
-                    <a href="#" class="block py-2 px-3  hover:bg-[#9c1428]"><i
-                            class="fa-regular fa-envelope mr-2 text-white"></i> Contact</a>
+                    <a href="#" class="block py-3 px-3 hover:bg-[#9c1428]">
+                        <i class="fa-solid fa-info-circle mr-2 text-white"></i> About
+                    </a>
+                    <a href="#" class="block py-3 px-3 hover:bg-[#9c1428]">
+                        <i class="fa-regular fa-envelope mr-2 text-white"></i> Contact
+                    </a>
                 </nav>
-                <div class="p-6 border-t border-gray-700 mt-24">
+                <div class="p-6 border-t border-gray-700 mt-auto">
                     <button
-                        class="w-full py-2 px-3 bg-[#9c1428] hover:bg-[#7d7d7d] text-white border-t border-[#939393]/40">Logout</button>
+                        class="w-full py-3 px-3 bg-[#9c1428] hover:bg-[#7d7d7d] text-white border-t border-[#939393]/40">
+                        Logout
+                    </button>
                 </div>
             </aside>
             <div class="flex-1 flex flex-col">
