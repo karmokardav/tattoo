@@ -1,17 +1,5 @@
 <footer class="py-24 bg-[#181818]">
     <div class="container mx-auto px-4">
-        <div class="flex justify-between">
-            <div>
-                <h2 class="text-3xl font-bold text-white">Last Works</h2>
-                <div class="w-30 h-1 bg-[#9c1428] mt-2 mb-8"></div>
-            </div>
-            <div>
-                <a href="/book"
-                    class="bg-[#9c1428] hover:bg-[#7d7d7d] text-white px-4 py-2 rounded-lg font-semibold hidden md:block">
-                    Book Now
-                </a>
-            </div>
-        </div>
         <div class="border-t [#939393]/40">
             <div class="grid grid-cols-4 gap-20 items-center">
                 <div class="pt-8 space-y-4">
@@ -39,9 +27,11 @@
                 </div>
 
                 <div class="h-62 w-full col-span-2 pt-8">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d229.26091393062575!2d89.21353927422223!3d23.163825950535898!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1762027075942!5m2!1sen!2sus" height="100%" width="100%"  style="border: 0;" allowfullscreen="" loading="static" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d229.26091393062575!2d89.21353927422223!3d23.163825950535898!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1762027075942!5m2!1sen!2sus"
+                        height="100%" width="100%" style="border: 0;" allowfullscreen="" loading="static"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
-    </div>
 </footer>
