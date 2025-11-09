@@ -1,46 +1,24 @@
 @extends('layouts.app')
 
-@section('title', 'home')
+@section('title', 'Gallery')
 @section('content')
-    <main class="bg-[#393738]">
+    <main class="bg-[#0b0b0b] min-h-screen text-white antialiased">
         @include('components.header.header')
-        <section class="bg-[#393738] container mx-auto px-4">
-            <div class="text-center">
-                <h1 class="text-white text-8xl font-bold"><span
-                        class="inline-block text-[150px]">G</span>a<span
-                        class="inline-block text-[200px] font-normal text-[#9c1428] animate-pulse">ll</span>ery</h1>
-                <div class="w-50 h-1 bg-[#9c1428] mt-2 mb-16 mx-auto"></div>
+        <section class="relative overflow-hidden">
+            <div class="container mx-auto px-6 py-16">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="font-extrabold text-white leading-tight">
+                        <span class="inline-block align-top text-[90px] md:text-[120px] leading-none">G</span>
+                        <span class="text-4xl md:text-6xl align-middle">allery</span>
+                        <span class="inline-block text-4xl md:text-6xl text-[#9c1428] ml-2 animate-pulse">.</span>
+                    </h1>
+
+                    <p class="mt-4 text-sm md:text-base text-gray-300">
+                        A curated selection of works. Click any image to open — navigation is CSS-only.
+                    </p>
+                </div>
             </div>
-            <div class="grid grid-cols-5 gap-4 my-16">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-                <img src="{{ asset('images/tattoo1.jpg') }}"
-                    class="w-full rounded-lg hover:scale-105 transition-transform duration-300 shadow-md border-2 border-white/40" alt="">
-            </div>
+            <div class="mx-auto mb-8 w-28 h-0.5 bg-[#9c1428]"></div>
         </section>
         @include('components.footer.footer')
     </main>

@@ -5,15 +5,15 @@
     <main class="bg-[#393738]">
         @include('components.header.header')
         <section class=" container mx-auto px-4">
-            <div class="flex items-center py-6">
-                <img src="{{ asset('images/machine.png') }}" class="w-1/2 object-cover">
-                <div class="w-1/2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center py-6">
+                <img src="{{ asset('images/machine.png') }}" class="h-80 w-80 md:h-full md:w-full  md:object-cover">
+                <div>
                     <div class="flex justify-between items-end">
                         <h1 class="text-6xl font-bold text-white">Contact</h1>
                         <a href="/book"
                             class="bg-[#9c1428] hover:bg-[#7d7d7d] text-white px-4 py-2 rounded-lg font-semibold md:block">Book Now</a>
                     </div>
-                    <div class="w-full h-1 bg-[#9c1428] mt-2 mb-16"></div>
+                    <div class="w-full h-1 bg-[#9c1428] mt-2 mb-10"></div>
                     <div>
                         <p class="text-gray-300 text-sm mt-4">Get in touch with me for any inquiries or bookings.</p>
                         <ul class="list-disc pl-6">

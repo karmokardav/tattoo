@@ -1,7 +1,7 @@
-<footer class="py-24 bg-[#181818]">
+<footer class="pt-24 pb-8 bg-[#181818]">
     <div class="container mx-auto px-4">
         <div class="border-t [#939393]/40">
-            <div class="grid grid-cols-4 gap-20 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-20 items-center">
                 <div class="pt-8 space-y-4">
                     <a href="/" class="text-2xl font-bold tracking-wider text-white">InkStory</a>
                     <p class="text-white py-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
@@ -26,7 +26,7 @@
                     </ul>
                 </div>
 
-                <div class="h-62 w-full col-span-2 pt-8">
+                <div class="h-62 w-full md:col-span-2 pt-8">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d229.26091393062575!2d89.21353927422223!3d23.163825950535898!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1762027075942!5m2!1sen!2sus"
                         height="100%" width="100%" style="border: 0;" allowfullscreen="" loading="static"
