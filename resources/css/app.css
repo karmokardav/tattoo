@@ -1,50 +1,58 @@
 @import "tailwindcss";
 
-.scroll-column {
-    position: relative;
+@keyframes scroll-up {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
 }
 
-.scroll-column .inner {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    animation: scrollUp 24s linear infinite;
-    padding-right: 4px;
+/* Scroll animation down */
+@keyframes scroll-down {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
-.scroll-column .inner.down {
-    animation: scrollDown 28s linear infinite;
+.animate-scroll-up {
+    animation: scroll-up 20s linear infinite;
 }
+
+.animate-scroll-down {
+    animation: scroll-down 20s linear infinite;
+}
+
+@media (max-width: 768px) {
+    .animate-scroll-up,
+    .animate-scroll-down {
+      animation-duration: 20s; /* একটু দ্রুত করবে mobile এ */
+    }
+  }
+
+/* small tweak to ensure the duplicated images don't create whitespace */
+.scroll-column .inner img {
+    display: block;
+}
+
 
 .scroll-column:hover .inner,
 .scroll-column:focus-within .inner {
     animation-play-state: paused;
 }
 
-@keyframes scrollUp {
-    0% {
-        transform: translateY(0);
-    }
 
-    100% {
-        transform: translateY(-50%);
-    }
-}
 
-@keyframes scrollDown {
-    0% {
-        transform: translateY(-50%);
-    }
 
-    100% {
-        transform: translateY(0);
-    }
-}
 
-/* small tweak to ensure the duplicated images don't create whitespace */
-.scroll-column .inner img {
-    display: block;
-}
+
+
 
 /* Custom styles for the tall vertical panels */
 .panel {
