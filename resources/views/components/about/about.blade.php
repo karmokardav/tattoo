@@ -5,7 +5,7 @@
                 <img src="{{ asset('images/tattoo1.jpg') }}" alt="Background"
                     class="absolute inset-0 w-full h-full object-cover opacity-30">
                 <div
-                    class="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between w-full px-4 md:px-8">
+                    class="relative flex flex-col md:flex-row items-center md:items-start justify-between w-full px-4 md:px-8">
                     <div class="text-center md:text-left mb-6 md:mb-0">
                         <h1 class="text-white text-5xl md:text-8xl font-bold leading-tight">About</h1>
                         <h1 class="text-white text-5xl md:text-8xl font-bold leading-tight">Us</h1>

@@ -39,3 +39,6 @@ Route::get("/dashboard", function () {
 Route::get("/contact", function () {
     return view("contact.contact");
 });
+Route::get("/about", function () {
+    return view("about.about");
+});

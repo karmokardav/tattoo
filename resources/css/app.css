@@ -3,6 +3,7 @@
 .scroll-column {
     position: relative;
 }
+
 .scroll-column .inner {
     display: flex;
     flex-direction: column;
@@ -43,4 +44,61 @@
 /* small tweak to ensure the duplicated images don't create whitespace */
 .scroll-column .inner img {
     display: block;
+}
+
+/* Custom styles for the tall vertical panels */
+.panel {
+    height: 56vh;
+    min-height: 360px;
+    transition: flex 600ms cubic-bezier(.2, .8, .2, 1), transform 400ms ease, box-shadow 400ms ease;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6));
+    opacity: .9;
+    transition: opacity 400ms;
+}
+
+.panel .label {
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    transform: translateX(-50%) rotate(-90deg);
+    transform-origin: left top;
+    white-space: nowrap;
+    letter-spacing: .2em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: .85rem;
+}
+
+/* collapsed panels */
+.panel.collapsed {
+    flex: 0.6;
+    filter: grayscale(.35) contrast(.9);
+}
+
+/* active panel */
+.panel.active {
+    flex: 2.6;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, .55);
+    transform: translateY(-6px);
+}
+
+/* small-screen adjustments */
+@media (max-width: 768px) {
+    .panel {
+        height: 42vh
+    }
+
+    .panel .label {
+        display: none
+    }
 }

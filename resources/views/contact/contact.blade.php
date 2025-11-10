@@ -11,7 +11,8 @@
                     <div class="flex justify-between items-end">
                         <h1 class="text-6xl font-bold text-white">Contact</h1>
                         <a href="/book"
-                            class="bg-[#9c1428] hover:bg-[#7d7d7d] text-white px-4 py-2 rounded-lg font-semibold md:block">Book Now</a>
+                            class="bg-[#9c1428] hover:bg-[#7d7d7d] text-white px-4 py-2 rounded-lg font-semibold md:block">Book
+                            Now</a>
                     </div>
                     <div class="w-full h-1 bg-[#9c1428] mt-2 mb-10"></div>
                     <div>
@@ -19,9 +20,26 @@
                         <ul class="list-disc pl-6">
                             <li class="text-white">Email: <a href="oishe452@gmail.com"
                                     class="hover:text-[#9c1428]">oishe452@gmail.com</a></li>
-                            <li class="text-white">Phone: <a href="+8801797703787" class="hover:text-[#9c1428]">+8801797703787</a></li>
+                            <li class="text-white">Phone: <a href="+8801797703787"
+                                    class="hover:text-[#9c1428]">+8801797703787</a></li>
                             <li class="text-white">Address: jashore, khulna, Bangladesh</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="bg-[#393738] text-white antialiased">
+                <div class="flex items-center justify-center p-6">
+                    <div class="w-full px-10">
+                        <div id="carousel" class="flex gap-4 items-stretch">
+                            <!-- Panels inserted by JS for easy swapping of image URLs -->
+                        </div>
+
+                        <div class="mt-6 flex items-center justify-center gap-4">
+                            <button id="prev" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20">Prev</button>
+                            <button id="next" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20">Next</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 
 @section('title', 'Gallery')
 @section('content')
-    <main class="bg-[#0b0b0b] min-h-screen text-white antialiased">
+    <main class="bg-[#393738] min-h-screen text-white antialiased">
         @include('components.header.header')
         <section class="relative overflow-hidden">
             <div class="container mx-auto px-6 py-16">
