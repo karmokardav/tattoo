@@ -22,7 +22,7 @@ class AuthController extends Controller
     public function login_action(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
@@ -33,7 +33,8 @@ class AuthController extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        $existUser = User::where('email', $email)->first(); // retrieve user with email
+        // find user
+        $existUser = User::where('email', $email)->first();
 
         if (!$existUser) {
             return redirect()->back()->withErrors([
@@ -41,14 +42,33 @@ class AuthController extends Controller
             ])->withInput();
         }
 
+        // login attempt
         if (!auth()->attempt(['email' => $email, 'password' => $password])) {
             return back()->withInput()->withErrors([
                 'password' => 'Invalid Credentials'
             ]);
         }
 
-        return redirect()->route('home')->with('success', 'Signin Successfully!');
+        // secure login session
+        $request->session()->regenerate();
+
+        $user = auth()->user();
+
+        // ============================
+        // ADMIN CHECK
+        // ============================
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard')
+                ->with('success', 'Welcome Admin!');
+        }
+
+        // ============================
+        // NORMAL USER REDIRECT
+        // ============================
+        return redirect()->route('home')
+            ->with('success', 'Signin Successfully!');
     }
+
 
     public function logout()
     {
@@ -56,7 +76,7 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-// register****************************************
+    // register****************************************
     public function showRegister()
     {
         return view("auth.register");
@@ -90,6 +110,7 @@ class AuthController extends Controller
         $user->name = $name;
         $user->email = $email;
         $user->password = bcrypt($password);
+        $user->role = 'user';
         $user->save();
 
         // User::create([
