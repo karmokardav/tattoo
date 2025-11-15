@@ -12,8 +12,15 @@
     </ul>
 
     <!-- CTA -->
-    <a href="{{ route('login') }}"
-        class="bg-[#9c1428] hover:bg-[#7d7d7d] text-white px-4 py-2 rounded-lg font-semibold hidden md:block">
-        login
-    </a>
+    @if (Auth::check())
+        <a href="{{ route('logout') }}"
+            class="bg-[#9c1428] hover:bg-[#7d7d7d] text-white px-4 py-2 rounded-lg font-semibold hidden md:block">
+            logout
+        </a>
+    @else
+        <a href="{{ route('login') }}"
+            class="bg-[#9c1428] hover:bg-[#7d7d7d] text-white px-4 py-2 rounded-lg font-semibold hidden md:block">
+            login
+        </a>
+    @endif
 </section>

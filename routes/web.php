@@ -14,6 +14,8 @@ Route::post('/register_action', [AuthController::class, 'register_action'])->nam
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login_action', [AuthController::class, 'login_action'])->name('login_action');
 
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
 // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
