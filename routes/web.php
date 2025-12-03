@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+
+    Route::resource('gallery', GalleryController::class)->only([
+                'index',
+                'store',
+                'update',
+                'destroy'
+            ]);
+
 });
 
 
@@ -35,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get("/gallery", function () {
-    return view("gallery.gallery");
+    // return view("gallery.gallery");
 });
 Route::get("/blog", function () {
     return view("blog.blog");

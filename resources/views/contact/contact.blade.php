@@ -44,7 +44,22 @@
                 </div>
             </div>
         </section>
+        <section>
+            <div class="bg-[#393738] text-white antialiased">
+                <div class="flex items-center justify-center p-6">
+                    <div class="w-full px-10">
+                        <div id="carousel" class="flex gap-4 items-stretch">
+                            <!-- Panels inserted by JS for easy swapping of image URLs -->
+                        </div>
 
+                        <div class="mt-6 flex items-center justify-center gap-4">
+                            <button id="prev" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20">Prev</button>
+                            <button id="next" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         @include('components.footer.footer')
     </main>
 @endsection
