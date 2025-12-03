@@ -1,8 +1,10 @@
+import gallery from "./pages/gallery";
+
 document.addEventListener("DOMContentLoaded", function () {
     globalFunction();
 
-    if (document.querySelector(".page-dashboard")) {
-        dashboardPage();
+    if (document.querySelector(".page_gallery")) {
+        gallery();
         }
 });
 
