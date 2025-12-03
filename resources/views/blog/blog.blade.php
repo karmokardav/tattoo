@@ -4,7 +4,7 @@
 @section('content')
     <main class="bg-[#393738]">
         @include('components.header.header')
-        <main class="max-w-6xl mx-auto px-6 pb-20">
+        <main class=" px-2 md:px-6 pb-20">
             <!-- Row 1 (image-left, text-right) -->
             <section class="grid md:grid-cols-2 gap-12 items-center py-12 vertical-lines">
                 <div class="relative">
