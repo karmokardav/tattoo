@@ -1,9 +1,11 @@
 import gallery from "./pages/gallery";
+import globalFunction from "./global";
+// import $ from "jquery";
 
 document.addEventListener("DOMContentLoaded", function () {
     globalFunction();
 
-    if (document.querySelector(".page_gallery")) {
+    if (document.querySelector(".page-gallery")) {
         gallery();
         }
 });
