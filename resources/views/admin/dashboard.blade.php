@@ -2,101 +2,161 @@
 
 @section('title', 'dashboard')
 @section('content')
-    <section class="bg-[#393738] font-sans">
-        <div class="flex min-h-screen">
+    <!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Dashboard</title>
 
-            <!-- Sidebar -->
-            @include('admin.sidebar')
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-            <!-- Main Content -->
-            <div class="flex-1 flex flex-col  bg-[#393738]">
+  <!-- Material Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+    rel="stylesheet"
+  />
 
-                <!-- Top Bar -->
-                @include('admin.header')
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#695CFE",
+            bgPrimary: "#f9fafb",
+            bgSecondary: "#ECECFD",
+            borderHr: "#E2E8F0",
+          },
+        },
+      },
+    };
+  </script>
 
-                <!-- Page Content -->
-                <div class="p-6">
+  <style>
+    /* Sidebar collapse */
+    .sidebar.collapsed {
+      width: 90px;
+    }
+    .sidebar.collapsed .menu-label,
+    .sidebar.collapsed .theme-text,
+    .sidebar.collapsed .sidebar-logo {
+      opacity: 0;
+      pointer-events: none;
+    }
 
-                    
-                    <!-- Card -->
-                    <!-- <div class="bg-white rounded-xl shadow border border-blue-400 p-6">
-                            <h2 class="text-lg font-semibold mb-4">Top Channels</h2>
+    /* Mobile overlay */
+    body.sidebar-open::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 20;
+    }
+  </style>
+</head>
 
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-sm text-left">
-                                    <thead class="text-gray-500 border-b">
-                                        <tr>
-                                            <th class="py-3">Source</th>
-                                            <th>Visitors</th>
-                                            <th>Revenues</th>
-                                            <th>Sales</th>
-                                            <th>Conversion</th>
-                                        </tr>
-                                    </thead>
+<body class="bg-bgPrimary dark:bg-gray-900 transition">
 
-                                    <tbody class="divide-y">
-                                        <tr class="hover:bg-gray-50">
-                                            <td class="py-3 flex items-center gap-3">
-                                                <img src="https://www.google.com/favicon.ico" class="w-6 h-6">
-                                                Google
-                                            </td>
-                                            <td>3.5K</td>
-                                            <td class="text-green-600">$5,768</td>
-                                            <td>590</td>
-                                            <td class="text-blue-600">4.8%</td>
-                                        </tr>
+<!-- Mobile Navbar -->
+<nav class="md:hidden sticky top-0 z-30 bg-bgPrimary dark:bg-gray-900 border-b border-borderHr p-4">
+  <button class="sidebar-toggle w-10 h-10 flex items-center justify-center rounded-lg bg-bgSecondary">
+    <span class="material-symbols-rounded">menu</span>
+  </button>
+</nav>
 
-                                        <tr class="hover:bg-gray-50">
-                                            <td class="py-3 flex items-center gap-3">
-                                                <img src="https://abs.twimg.com/favicons/twitter.ico" class="w-6 h-6">
-                                                Twitter
-                                            </td>
-                                            <td>2.2K</td>
-                                            <td class="text-green-600">$4,635</td>
-                                            <td>467</td>
-                                            <td class="text-blue-600">4.3%</td>
-                                        </tr>
+<div class="flex min-h-screen">
 
-                                        <tr class="hover:bg-gray-50">
-                                            <td class="py-3 flex items-center gap-3">
-                                                <img src="https://github.githubassets.com/favicons/favicon.svg" class="w-6 h-6">
-                                                Github
-                                            </td>
-                                            <td>2.1K</td>
-                                            <td class="text-green-600">$4,290</td>
-                                            <td>420</td>
-                                            <td class="text-blue-600">3.7%</td>
-                                        </tr>
+  <!-- Sidebar -->
+  <aside class="sidebar w-[270px] bg-white dark:bg-gray-800 border-r border-borderHr flex flex-col transition-all duration-300 fixed md:sticky top-0 h-screen z-30">
 
-                                        <tr class="hover:bg-gray-50">
-                                            <td class="py-3 flex items-center gap-3">
-                                                <img src="https://vimeo.com/favicon.ico" class="w-6 h-6">
-                                                Vimeo
-                                            </td>
-                                            <td>1.5K</td>
-                                            <td class="text-green-600">$3,580</td>
-                                            <td>389</td>
-                                            <td class="text-blue-600">2.5%</td>
-                                        </tr>
+    <!-- Header -->
+    <div class="flex items-center justify-between p-5 border-b border-borderHr relative">
+      <img src="logo.png" class="sidebar-logo w-12 h-12 rounded-full" />
+      <button class="sidebar-toggle absolute right-4 w-10 h-10 flex items-center justify-center rounded-lg bg-bgSecondary">
+        <span class="material-symbols-rounded text-2xl">chevron_left</span>
+      </button>
+    </div>
 
-                                        <tr class="hover:bg-gray-50">
-                                            <td class="py-3 flex items-center gap-3">
-                                                <img src="https://www.facebook.com/favicon.ico" class="w-6 h-6">
-                                                Facebook
-                                            </td>
-                                            <td>1.2K</td>
-                                            <td class="text-green-600">$2,740</td>
-                                            <td>230</td>
-                                            <td class="text-blue-600">1.9%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div> -->
-                </div>
-            </div>
+    <!-- Content -->
+    <div class="flex-1 p-4 space-y-4 overflow-y-auto">
+
+      <!-- Search -->
+      <div class="flex items-center gap-3 bg-bgSecondary rounded-lg px-4 h-12">
+        <span class="material-symbols-rounded text-gray-400">search</span>
+        <input type="search" placeholder="Search..." class="bg-transparent outline-none w-full" />
+      </div>
+
+      <!-- Menu -->
+      <ul class="space-y-1">
+        <li>
+          <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-white">
+            <span class="material-symbols-rounded">dashboard</span>
+            <span class="menu-label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary hover:text-white transition">
+            <span class="material-symbols-rounded">insert_chart</span>
+            <span class="menu-label">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary hover:text-white transition">
+            <span class="material-symbols-rounded">notifications</span>
+            <span class="menu-label">Notifications</span>
+          </a>
+        </li>
+        <li>
+          <a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary hover:text-white transition">
+            <span class="material-symbols-rounded">settings</span>
+            <span class="menu-label">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="p-4 border-t border-borderHr">
+      <button class="theme-toggle flex items-center gap-3 w-full h-12 px-4 rounded-lg bg-bgSecondary">
+        <span class="material-symbols-rounded">dark_mode</span>
+        <span class="theme-text">Dark Mode</span>
+        <div class="ml-auto w-12 h-6 bg-gray-300 dark:bg-primary rounded-full relative transition">
+          <div class="w-4 h-4 bg-white rounded-full absolute top-1 left-1 dark:translate-x-6 transition"></div>
         </div>
+      </button>
+    </div>
 
-    </section>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-8 text-gray-800 dark:text-gray-100 md:ml-[270px] transition-all">
+    <h1 class="text-2xl font-semibold mb-6">Dashboard Overview</h1>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+      Welcome to your dashboard! Everything is in a single HTML file using Tailwind CSS.
+    </div>
+  </main>
+
+</div>
+
+<script>
+  // Sidebar toggle
+  document.querySelectorAll(".sidebar-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelector(".sidebar").classList.toggle("collapsed");
+      document.body.classList.toggle("sidebar-open");
+    });
+  });
+
+  // Dark mode toggle
+  document.querySelector(".theme-toggle").addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+  });
+</script>
+
+</body>
+</html>
+
 
 @endsection
