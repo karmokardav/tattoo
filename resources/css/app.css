@@ -100,13 +100,5 @@
     transform: translateY(-6px);
 }
 
-/* small-screen adjustments */
-@media (max-width: 768px) {
-    .panel {
-        height: 42vh
-    }
 
-    .panel .label {
-        display: none
-    }
-}
+/* panel content */

@@ -22,42 +22,25 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
-Route::middleware([ ])->group(function () {
-    Route::get('/admin/dashboard', [DashboardController::class, 'index'])
-        ->name('admin.dashboard');
-});
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-    Route::get('/page/{name}', function ($name) {
-        if (view()->exists('pages.' . $name)) {
-            return view('pages.' . $name);
-        }
-        abort(404);
-    });
+    // Route::get('/page/{name}', function ($name) {
+    //     if (view()->exists('pages.' . $name)) {
+    //         return view('pages.' . $name);
+    //     }
+    //     return response('<div id="partial-content"><h2>Page not found</h2></div>', 404);
+    // });
 
-    Route::resource('gallery', GalleryController::class)->only([
-        'index',
-        'store',
-        'update',
-        'destroy'
-    ]);
+
+   
 });
 
 
 
-// Route::middleware('auth')->group(function () {
-//     Route::resource('/users', UserController::class);
-// });
-
-
-
-// Route::resource('gallery', GalleryController::class)->only([
-//     'index',
-//     'store',
-//     'update',
-//     'destroy'
-// ]);
-
+Route::get("/gallery", function () {
+    return view("gallery.gallery");
+});
 Route::get("/blog", function () {
     return view("blog.blog");
 });

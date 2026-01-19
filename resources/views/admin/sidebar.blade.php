@@ -1,92 +1,32 @@
-<aside id="sidebar" class="fixed md:static inset-y-0 left-0 z-50
-         w-64 bg-[#181818] text-gray-300
-         transform -translate-x-full md:translate-x-0
-         transition-all duration-300 ease-in-out
-         flex flex-col">
+<aside id="sidebar" class="bg-[#181818] w-16 md:w-64 transition-all duration-300">
 
-    <!-- Header -->
-    <div class="px-6 py-5 text-white text-xl font-bold flex justify-between items-center">
-        <span>TailAdmin</span>
-        <button id="closeSidebar" class="md:hidden text-xl">✕</button>
+    <div class="p-4 text-white text-xl font-bold hidden md:block">
+        Hridoy
     </div>
-
-    <!-- Nav -->
-    <nav class="flex-1 px-4 space-y-1">
-
-        <a href="/gallery" class="nav-link flex items-center gap-3 px-3 py-2 rounded bg-slate-800 text-white">
-            📊 Dashboard
-        </a>
-
-        <!-- Dropdown -->
-        <button class="dropdown-btn w-full flex items-center justify-between px-3 py-2 rounded hover:bg-slate-800">
-            <span class="flex items-center gap-3">🛒 eCommerce</span>
-            <span>▾</span>
+    <div class="px-4">
+        <button class="w-full bg-white rounded py-2">
+            +
         </button>
-
-        <div class="dropdown hidden ml-6 space-y-1">
-            <a href="#" class="block px-3 py-2 rounded hover:bg-slate-800">Products</a>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-slate-800">Orders</a>
-        </div>
-
-        <a href="#" class="nav-link flex items-center gap-3 px-3 py-2 rounded hover:bg-slate-800">
-            📈 Analytics
+    </div>
+    <nav class="mt-6 flex-1 space-y-2 px-4 text-white">
+        <a class="flex items-center gap-3">
+            <i data-feather="inbox"></i>
+            <span class="menu-text">Inbox</span>
         </a>
-
-        <a href="#" class="nav-link flex items-center gap-3 px-3 py-2 rounded hover:bg-slate-800">
-            📣 Marketing
+        <a class="flex items-center gap-3">
+            <i data-feather="send"></i>
+            <span class="menu-text">Sent</span>
         </a>
-
-        <a href="#" class="nav-link flex items-center gap-3 px-3 py-2 rounded hover:bg-slate-800">
-            👥 CRM
+        <a class="flex items-center gap-3">
+            <i data-feather="file"></i>
+            <span class="menu-text">Draft</span>
         </a>
     </nav>
-
-    <!-- Logout -->
-    <div class="p-6 border-t border-gray-700">
-        <a href="{{ route('logout') }}"
-            class="block text-center py-3 bg-[#9c1428] hover:bg-[#7d7d7d] text-white rounded-md">
-            Logout
-        </a>
+    <div class="p-4 flex items-center gap-3">
+        <img src="https://i.pravatar.cc/40" class="rounded-full" />
+        <div class="menu-text">
+            <p class="text-sm font-semibold">Harika</p>
+            <p class="text-xs text-gray-400">Admin</p>
+        </div>
     </div>
 </aside>
-
-<script>
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const openBtn = document.getElementById('openSidebar');
-    const closeBtn = document.getElementById('closeSidebar');
-
-    // Open
-    openBtn?.addEventListener('click', () => {
-        sidebar.classList.remove('-translate-x-full');
-        overlay.classList.remove('hidden');
-    });
-
-    // Close
-    closeBtn?.addEventListener('click', closeSidebar);
-    overlay?.addEventListener('click', closeSidebar);
-
-    function closeSidebar() {
-        sidebar.classList.add('-translate-x-full');
-        overlay.classList.add('hidden');
-    }
-
-    // Dropdown
-    document.querySelectorAll('.dropdown-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.nextElementSibling.classList.toggle('hidden');
-        });
-    });
-
-    // Active link auto detect
-    document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.href === window.location.href) {
-            link.classList.add('bg-slate-800', 'text-white');
-        }
-    });
-
-    // ESC key close
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeSidebar();
-    });
-</script>
