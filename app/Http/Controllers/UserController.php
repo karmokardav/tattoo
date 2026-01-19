@@ -10,9 +10,13 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(User $user)
     {
-        return view("home.home");
+        if ($user->role === 'admin') {
+            return redirect(route('admin.dashboard'));
+        }
+
+        return view('home.home');
     }
 
     /**

@@ -5,7 +5,7 @@
     <section>
         @include('components.header.header')
         <div class="bg-[#393738] text-white antialiased">
-            <div class="min-h-screen flex items-center justify-center p-6">
+            <div class="flex items-center justify-center p-6">
                 <div class="w-full max-w-6xl">
                     <header class="mb-6 text-center">
                         <h1 class="font-extrabold text-white leading-tight">

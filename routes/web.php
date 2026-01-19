@@ -22,16 +22,18 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
+Route::middleware([ ])->group(function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])
+        ->name('admin.dashboard');
+});
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
     Route::get('/page/{name}', function ($name) {
         if (view()->exists('pages.' . $name)) {
             return view('pages.' . $name);
         }
-        return response('<div id="partial-content"><h2>Page not found</h2></div>', 404);
+        abort(404);
     });
-
 
     Route::resource('gallery', GalleryController::class)->only([
         'index',
@@ -39,7 +41,6 @@ Route::middleware(['auth'])->group(function () {
         'update',
         'destroy'
     ]);
-
 });
 
 
@@ -50,9 +51,13 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::get("/gallery", function () {
-    // return view("gallery.gallery");
-});
+// Route::resource('gallery', GalleryController::class)->only([
+//     'index',
+//     'store',
+//     'update',
+//     'destroy'
+// ]);
+
 Route::get("/blog", function () {
     return view("blog.blog");
 });

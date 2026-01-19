@@ -12,7 +12,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        // return view('admin.gallery.gallery');
+        return view("gallery.gallery");
     }
 
     /**
@@ -28,15 +28,7 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'image' => 'required|image|mimes:1024',
-            'status' => 'required',
-        ]);
-
-        $gallery = new Gallery();
-        $gallery->image = $request->file('image')->store('images/gallery', 'public');
-        $gallery->status = $request->status;
-        $gallery->save();
+        
     }
 
     /**

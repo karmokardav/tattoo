@@ -62,5 +62,4 @@
             <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
         </div>
     </section>
-    @include('components.footer.footer')
 </main>

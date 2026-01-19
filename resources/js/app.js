@@ -1,5 +1,5 @@
-import gallery from "./pages/gallery";
-import globalFunction from "./global";
+// import gallery from "./pages/gallery";
+// import globalFunction from "./global";
 // import $ from "jquery";
 
 document.addEventListener("DOMContentLoaded", function () {
