@@ -1,4 +1,4 @@
 const globalFunction = () => {
-    // console.log('globalFunction');
+    console.log('globalFunction');
 };
 export default globalFunction;

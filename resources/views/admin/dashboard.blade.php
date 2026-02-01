@@ -2,7 +2,7 @@
 
 @section('title', 'dashboard')
 @section('content')
-    <section class="bg-[#393738] font-sans h-screen overflow-hidden">
+    <section class="page-dashboard bg-[#393738] font-sans h-screen overflow-hidden">
         <div class="flex h-full">
 
             <!-- Sidebar -->
@@ -10,13 +10,14 @@
 
             <!-- Main Content -->
             <div class="flex-1 flex flex-col  bg-[#393738]">
-
                 <!-- Top Bar -->
                 @include('admin.header')
-                @include('admin.components.dashboard.index')
+
+                <div id="main-content">
+                    @include('admin.components.dashboard.index')
+                </div>
+
             </div>
         </div>
-
     </section>
-
 @endsection

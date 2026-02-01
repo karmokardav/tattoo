@@ -22,6 +22,35 @@
     </section>
     <section class="grid grid-cols-4  md:grid-cols-8 gap-2 mb-8 px-8">
         <div>
+            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
+
+            <div class="flex items-center justify-between mt-1 text-gray-300">
+
+                <!-- Title -->
+                <h3 class="text-white truncate max-w-[55%] text-[9px] sm:text-[11px] md:text-xs">
+                    Rose Skull
+                </h3>
+
+                <!-- Views & Likes -->
+                <div class="flex items-center gap-2 md:gap-3 text-[8px] sm:text-[10px] md:text-xs">
+
+                    <span class="flex items-center gap-0.5">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>98</span>
+                    </span>
+
+                    <span class="flex items-center gap-0.5">
+                        <i class="fa-solid fa-heart text-red-500"></i>
+                        <span>32</span>
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- <div>
             <h1 class="text-white text-right pr-2">. . .</h1>
             <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
         </div>
@@ -56,10 +85,9 @@
         <div>
             <h1 class="text-white text-right pr-2">. . .</h1>
             <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
+        </div> -->
     </section>
 </main>
+@push('scripts')
+    <script src="{{ asset('js/page/gallery.js') }}"></script>
+@endpush

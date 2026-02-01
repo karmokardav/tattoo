@@ -25,15 +25,15 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-    // Route::get('/page/{name}', function ($name) {
-    //     if (view()->exists('pages.' . $name)) {
-    //         return view('pages.' . $name);
-    //     }
-    //     return response('<div id="partial-content"><h2>Page not found</h2></div>', 404);
-    // });
 
+    Route::resource('galleries', GalleryController::class)->only([
+        'index',
+        'store',
+        'update',
+        'destroy'
+    ]);
+    Route::get('/galleries/form', [GalleryController::class, 'form'])->name('galleries.form');
 
-   
 });
 
 

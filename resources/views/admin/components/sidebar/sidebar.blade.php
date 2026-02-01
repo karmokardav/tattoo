@@ -17,7 +17,7 @@
         </div>
         <nav class="flex-1 px-2 md:px-3 space-y-1 mt-6">
 
-            <a href="#"
+            <a href="{{ route(name: 'admin.dashboard') }}"
                 class="flex items-center justify-center md:justify-start md:gap-3 px-0 md:px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">
 
                 <i class="fa fa-home text-lg"></i>
@@ -26,25 +26,16 @@
                     Dashboard
                 </span>
             </a>
-            <a href="#"
+            <a href="{{ route('galleries.index') }}" onclick="loadPage(event, this.href)"
                 class="flex items-center justify-center md:justify-start md:gap-3 px-0 md:px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">
 
-                <i class="fa fa-home text-lg"></i>
-
-                <span class="hidden md:block">
-                    Dashboard
-                </span>
+                <i class="fa fa-image text-lg"></i>
+                <span class="hidden md:block">Gallery</span>
             </a>
-            <a href="#"
-                class="flex items-center justify-center md:justify-start md:gap-3 px-0 md:px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">
 
-                <i class="fa fa-home text-lg"></i>
 
-                <span class="hidden md:block">
-                    Dashboard
-                </span>
-            </a>
-            <div x-data="{drop: false,top: 0}" class="relative">
+            <!-- workspace -->
+            <!-- <div x-data="{drop: false,top: 0}" class="relative">
                 <button @click="drop = !drop; top = $el.getBoundingClientRect().top + window.scrollY;"
                     class="w-full flex items-center justify-center gap-3 px-3 py-2 rounded-lg hover:bg-white 10 transition">
                     <i class="fa fa-layer-group text-lg"></i>
@@ -57,9 +48,6 @@
                         class="fa fa-chevron-down ml-auto text-xs hidden md:block transition-transform"></i>
                 </button>
 
-                <!-- Dropdown -->
-
-                <!-- Desktop dropdown (OLD DESIGN) -->
                 <div x-show="drop" x-transition
                     class="hidden md:block ml-6 mt-1 space-y-1 text-sm border-l border-white/20">
                     <a class="block ml-4 px-3 py-1.5 rounded-md hover:bg-white/10">
@@ -73,7 +61,6 @@
                     </a>
                 </div>
 
-                <!-- Mobile dropdown (FLOATING) -->
                 <div x-show="drop" x-transition
                     class="md:hidden absolute left-full  -translate-y-5 ml-3 w-48 space-y-1 text-sm bg-[#1f1f1f] border border-white/10 rounded-lg shadow-lg z-50 p-2">
                     <a class="block px-3 py-1.5 rounded-md hover:bg-white/10">
@@ -86,7 +73,7 @@
                         Integrations
                     </a>
                 </div>
-            </div>
+            </div> -->
 
 
         </nav>
@@ -100,5 +87,4 @@
         </div>
 
     </aside>
-
 </div>

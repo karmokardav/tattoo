@@ -18,12 +18,14 @@
     @if (Auth::check())
         <a href="{{ route('logout') }}"
            class="hidden md:block bg-[#9c1428] hover:bg-[#7d7d7d] px-4 py-2 rounded-lg font-semibold">
+           <i class="fa-solid fa-arrow-right-from-bracket mr-1"></i>
             Logout
         </a>
     @else
         <a href="{{ route('login') }}"
            class="hidden md:block bg-[#9c1428] hover:bg-[#7d7d7d] px-4 py-2 rounded-lg font-semibold">
-            Login
+            <i class="fa-solid fa-arrow-right-to-bracket mr-1"></i>
+           Login
         </a>
     @endif
 
