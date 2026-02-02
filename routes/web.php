@@ -32,15 +32,17 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
         'update',
         'destroy'
     ]);
+    Route::get('/galleries/list', [GalleryController::class, 'list'])->name('galleries.list');
     Route::get('/galleries/form', [GalleryController::class, 'form'])->name('galleries.form');
 
 });
 
 
 
-Route::get("/gallery", function () {
-    return view("gallery.gallery");
-});
+Route::get('galleries', [GalleryController::class, 'index'])->name('galleries.index');
+Route::get('galleries/{id}', [GalleryController::class, 'show'])->name('galleries.show');
+
+
 Route::get("/blog", function () {
     return view("blog.blog");
 });

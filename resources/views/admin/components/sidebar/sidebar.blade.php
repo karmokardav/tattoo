@@ -1,4 +1,4 @@
-<div class="flex">
+<div class="flex page-dashboard">
 
     <aside class="h-screen bg-[#181818] text-gray-400 w-20 md:w-64 transition-all duration-300 flex flex-col">
 
@@ -26,11 +26,17 @@
                     Dashboard
                 </span>
             </a>
-            <a href="{{ route('galleries.index') }}" onclick="loadPage(event, this.href)"
+            <a href="{{ route('galleries.list') }}"
                 class="flex items-center justify-center md:justify-start md:gap-3 px-0 md:px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">
 
                 <i class="fa fa-image text-lg"></i>
                 <span class="hidden md:block">Gallery</span>
+            </a>
+            <a href=""
+                class="flex items-center justify-center md:justify-start md:gap-3 px-0 md:px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition">
+
+                <i class="fa fa-newspaper text-lg"></i>
+                <span class="hidden md:block">Blog</span>
             </a>
 
 

@@ -20,74 +20,48 @@
         </div>
         <div class="mx-auto mb-8 w-28 h-0.5 bg-[#9c1428]"></div>
     </section>
-    <section class="grid grid-cols-4  md:grid-cols-8 gap-2 mb-8 px-8">
-        <div>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
+    <section class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-9 gap-2 mb-8 px-4 md:px-8">
 
-            <div class="flex items-center justify-between mt-1 text-gray-300">
+        @forelse($galleries as $gallery)
+            <div class="group">
 
-                <!-- Title -->
-                <h3 class="text-white truncate max-w-[55%] text-[9px] sm:text-[11px] md:text-xs">
-                    Rose Skull
-                </h3>
-
-                <!-- Views & Likes -->
-                <div class="flex items-center gap-2 md:gap-3 text-[8px] sm:text-[10px] md:text-xs">
-
-                    <span class="flex items-center gap-0.5">
-                        <i class="fa-solid fa-eye"></i>
-                        <span>98</span>
-                    </span>
-
-                    <span class="flex items-center gap-0.5">
-                        <i class="fa-solid fa-heart text-red-500"></i>
-                        <span>32</span>
-                    </span>
-
+                <!-- Image box -->
+                <div class="w-full h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden rounded-lg bg-gray-800">
+                    <img src="{{ asset('storage/' . $gallery->image) }}" alt="{{ $gallery->title }}" loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                 </div>
+
+                <!-- Info -->
+                <div class="flex items-center justify-between mt-1 text-gray-300">
+
+                    <!-- Title -->
+                    <h3 class="text-white truncate max-w-[60%] text-[10px] sm:text-[11px] md:text-xs">
+                        {{ $gallery->title }}
+                    </h3>
+
+                    <!-- Views & Likes -->
+                    <div class="flex items-center gap-2 text-[9px] sm:text-[10px] md:text-xs">
+
+                        <span class="flex items-center gap-1">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>98</span>
+                        </span>
+
+                        <span class="flex items-center gap-1">
+                            <i class="fa-solid fa-heart text-red-500"></i>
+                            <span>32</span>
+                        </span>
+
+                    </div>
+                </div>
+
             </div>
+        @empty
+            <p class="text-gray-400 col-span-full text-center">
+                No galleries found
+            </p>
+        @endforelse
 
-        </div>
-
-
-        <!-- <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div>
-        <div>
-            <h1 class="text-white text-right pr-2">. . .</h1>
-            <img class="rounded-lg" src="{{ asset('images/tattoo1.jpg') }}" alt="">
-        </div> -->
     </section>
+
 </main>
-@push('scripts')
-    <script src="{{ asset('js/page/gallery.js') }}"></script>
-@endpush

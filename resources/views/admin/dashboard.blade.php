@@ -2,7 +2,7 @@
 
 @section('title', 'dashboard')
 @section('content')
-    <section class="page-dashboard bg-[#393738] font-sans h-screen overflow-hidden">
+    <section class="bg-[#393738] font-sans h-screen overflow-hidden">
         <div class="flex h-full">
 
             <!-- Sidebar -->

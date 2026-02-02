@@ -14,6 +14,7 @@
     "dependencies": {
         "@tailwindcss/vite": "^4.1.14",
         "jquery": "^4.0.0",
-        "tailwindcss": "^4.1.14"
+        "tailwindcss": "^4.1.14",
+        "toastr": "^2.1.4"
     }
 }
