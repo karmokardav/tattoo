@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class UserController extends Controller
             return redirect(route('admin.dashboard'));
         }
 
-        return view('home.home');
+        $galleries = Gallery::where('status', 'active')->get();
+        return view('home.home', compact('galleries'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\GalleryLike;
 
 class Gallery extends Model
 {
@@ -13,4 +14,10 @@ class Gallery extends Model
         'likes',
         'status'
     ];
+
+    public function likes()
+    {
+        return $this->hasMany(GalleryLike::class);
+    }
+
 }

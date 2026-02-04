@@ -7,6 +7,7 @@ use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationData;
 use Illuminate\Support\Facades\Validator;
+use App\Models\GalleryLike;
 
 class AuthController extends Controller
 {
@@ -53,6 +54,25 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         $user = auth()->user();
+
+        GalleryLike::where('session_id', session()->getId())
+            ->get()
+            ->each(function ($like) use ($user) {
+
+                $exists = GalleryLike::where('gallery_id', $like->gallery_id)
+                    ->where('user_id', $user->id)
+                    ->exists();
+
+                if (!$exists) {
+                    $like->update([
+                        'user_id' => $user->id,
+                        'session_id' => null,
+                    ]);
+                } else {
+                    // duplicate avoid
+                    $like->delete();
+                }
+            });
 
         // ============================
         // ADMIN CHECK

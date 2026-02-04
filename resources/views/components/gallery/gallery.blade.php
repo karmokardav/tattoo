@@ -7,14 +7,14 @@
       <div class="flex flex-wrap md:flex-nowrap items-stretch h-full gap-2 sm:gap-3 md:gap-4">
 
         <!-- Column up-->
+
         <div class="flex-1 min-w-[45%] sm:min-w-[30%] md:min-w-0">
           <div class="scroll-column h-full overflow-hidden relative rounded-md">
             <div class="inner flex flex-col gap-4 animate-scroll-up">
-              <img src="{{ asset('images/tattoo1.jpg') }}" alt="Tattoo 1" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo 2" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo3.jpg') }}" alt="Tattoo 3" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo1.jpg') }}" alt="Tattoo 4" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo 5" class="w-full h-56 object-cover rounded">
+              @foreach ($galleries->take(4) as $gallery)
+                <img src="{{ asset('storage/' . $gallery->image) }}" alt="Tattoo 1"
+                  class="w-full h-56 object-cover rounded">
+              @endforeach
             </div>
           </div>
         </div>
@@ -23,11 +23,10 @@
         <div class="flex-1 min-w-[45%] sm:min-w-[30%] md:min-w-0">
           <div class="scroll-column h-full overflow-hidden relative rounded-md">
             <div class="inner flex flex-col gap-4 animate-scroll-down">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo A" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo3.jpg') }}" alt="Tattoo B" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo1.jpg') }}" alt="Tattoo C" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo D" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo3.jpg') }}" alt="Tattoo E" class="w-full h-56 object-cover rounded">
+              @foreach ($galleries->skip(4)->take(4) as $gallery)
+                <img src="{{ asset('storage/' . $gallery->image) }}" alt="Tattoo A"
+                  class="w-full h-56 object-cover rounded">
+              @endforeach
             </div>
           </div>
         </div>
@@ -36,11 +35,10 @@
         <div class="flex-1 min-w-[45%] sm:min-w-[30%] md:min-w-0">
           <div class="scroll-column h-full overflow-hidden relative rounded-md">
             <div class="inner flex flex-col gap-4 animate-scroll-up">
-              <img src="{{ asset('images/tattoo1.jpg') }}" alt="Tattoo 1" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo 2" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo3.jpg') }}" alt="Tattoo 3" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo1.jpg') }}" alt="Tattoo 4" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo 5" class="w-full h-56 object-cover rounded">
+              @foreach ($galleries->skip(8)->take(4) as $gallery)
+                <img src="{{ asset('storage/' . $gallery->image) }}" alt="Tattoo A"
+                  class="w-full h-56 object-cover rounded">
+              @endforeach
             </div>
           </div>
         </div>
@@ -48,11 +46,9 @@
         <div class="flex-1 min-w-[45%] sm:min-w-[30%] md:min-w-0">
           <div class="scroll-column h-full overflow-hidden relative rounded-md">
             <div class="inner flex flex-col gap-4 animate-scroll-down">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo A" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo3.jpg') }}" alt="Tattoo B" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo1.jpg') }}" alt="Tattoo C" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo D" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo3.jpg') }}" alt="Tattoo E" class="w-full h-56 object-cover rounded">
+              @foreach ($galleries->skip(12)->take(4) as $gallery)
+              <img src="{{ asset('storage/' . $gallery->image) }}" alt="Tattoo A" class="w-full h-56 object-cover rounded">
+              @endforeach
             </div>
           </div>
         </div>
@@ -61,11 +57,9 @@
         <div class="flex-1 min-w-[45%] sm:min-w-[30%] md:min-w-0">
           <div class="scroll-column h-full overflow-hidden relative rounded-md">
             <div class="inner flex flex-col gap-4 animate-scroll-up">
-              <img src="{{ asset('images/tattoo1.jpg') }}" alt="Tattoo 1" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo 2" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo3.jpg') }}" alt="Tattoo 3" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo1.jpg') }}" alt="Tattoo 4" class="w-full h-56 object-cover rounded">
-              <img src="{{ asset('images/tattoo2.jpg') }}" alt="Tattoo 5" class="w-full h-56 object-cover rounded">
+              @foreach ($galleries->skip(16)->take(4) as $gallery)
+              <img src="{{ asset('storage/' . $gallery->image) }}" alt="Tattoo A" class="w-full h-56 object-cover rounded">
+              @endforeach
             </div>
           </div>
         </div>

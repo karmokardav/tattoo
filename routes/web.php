@@ -40,7 +40,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
 
 Route::get('galleries', [GalleryController::class, 'index'])->name('galleries.index');
-Route::get('galleries/{id}', [GalleryController::class, 'show'])->name('galleries.show');
+// Route::get('galleries/{id}', [GalleryController::class, 'show'])->name('galleries.show');
+Route::post('/gallery/view/{gallery}', [GalleryController::class, 'view']);
+Route::post('/gallery/like/{gallery}', [GalleryController::class, 'like']);
+
 
 
 Route::get("/blog", function () {

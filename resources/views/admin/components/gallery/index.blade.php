@@ -59,7 +59,7 @@
                                                                     <!-- Status -->
                                                                     <td class="px-2 md:px-4 py-1 md:py-2">
                                                                         <span class="capitalize inline-flex items-center rounded-md px-2 py-1 text-xs font-medium
-                                                                                    {{ $gallery->status === 'active'
+                                                                                                                    {{ $gallery->status === 'active'
                                         ? 'bg-green-400/10 text-green-400'
                                         : 'bg-red-400/10 text-red-400' }}">
                                                                             {{ $gallery->status }}
@@ -73,7 +73,7 @@
                                                                             class="absolute right-4 mt-2 w-44 bg-[#3A3A3A] border border-gray-200/20 rounded-lg shadow-lg z-10 text-center">
                                                                             <a href="#" data-id="{{ $gallery->id }}"
                                                                                 class="deleteBtn block py-2
-                                                                                                                            text-red-600 hover:bg-red-50">
+                                                                                                                                                            text-red-600 hover:bg-red-50">
                                                                                 <i class="fa-solid fa-trash mr-2"></i> Remove
                                                                             </a>
                                                                         </div>
@@ -88,7 +88,7 @@
                                     @endforelse
                                 </tbody>
                             </table>
-                            <div class="mt-2 ">
+                            <div class="d-flex justify-content-center mt-3">
                                 {{ $galleries->links() }}
                             </div>
                         </div>

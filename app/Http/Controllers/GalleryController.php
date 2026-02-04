@@ -6,6 +6,8 @@ use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use App\Models\GalleryLike;
+use Illuminate\Support\Facades\DB;
 
 class GalleryController extends Controller
 {
@@ -18,13 +20,15 @@ class GalleryController extends Controller
     // }
     public function index()
     {
-        $galleries = Gallery::all();
+        $galleries = Gallery::where('status', 'active')->get();
         return view('gallery.gallery', compact('galleries'));
     }
 
     public function list()
     {
-        $galleries = Gallery::paginate(5);
+        $galleries = Gallery::orderBy('id', 'desc')
+            ->paginate(2)
+            ->onEachSide(1);
 
         return view('admin.components.gallery.index', compact('galleries'));
 
@@ -36,18 +40,55 @@ class GalleryController extends Controller
     }
 
 
-    /**
-     * Show the dashboard of gallery.
-     */
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
+
+    public function view(Gallery $gallery)
+    {
+        $gallery->increment('views');
+
+        return response()->json([
+            'views' => $gallery->views
+        ]);
+    }
+
+    public function like(Gallery $gallery)
+    {
+        $user = auth()->user();
+        $sessionId = session()->getId();
+
+        if ($user) {
+            $alreadyLiked = GalleryLike::where('gallery_id', $gallery->id)
+                ->where('user_id', $user->id)
+                ->exists();
+        } else {
+            $alreadyLiked = GalleryLike::where('gallery_id', $gallery->id)
+                ->where('session_id', $sessionId)
+                ->exists();
+        }
+
+        if (!$alreadyLiked) {
+            DB::transaction(function () use ($gallery, $user, $sessionId) {
+                GalleryLike::create([
+                    'gallery_id' => $gallery->id,
+                    'user_id' => $user?->id,
+                    'session_id' => $user ? null : $sessionId,
+                ]);
+
+                $gallery->increment('likes');
+            });
+        }
+        return response()->json([
+            'views' => $gallery->views,
+            'likes' => $gallery->likes,
+            'already_liked' => $alreadyLiked
+        ]);
+    }
+
+
 
 
     public function store(Request $request)

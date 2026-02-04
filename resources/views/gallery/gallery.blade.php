@@ -20,15 +20,16 @@
         </div>
         <div class="mx-auto mb-8 w-28 h-0.5 bg-[#9c1428]"></div>
     </section>
-    <section class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-9 gap-2 mb-8 px-4 md:px-8">
+    <section class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-9 gap-3 mb-8 px-4 md:px-8">
 
         @forelse($galleries as $gallery)
-            <div class="group">
+            <div class="group ">
 
                 <!-- Image box -->
                 <div class="w-full h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden rounded-lg bg-gray-800">
                     <img src="{{ asset('storage/' . $gallery->image) }}" alt="{{ $gallery->title }}" loading="lazy"
-                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        onclick="openImageOnly('{{ $gallery->id }}','{{ asset('storage/' . $gallery->image) }}')">
                 </div>
 
                 <!-- Info -->
@@ -44,12 +45,12 @@
 
                         <span class="flex items-center gap-1">
                             <i class="fa-solid fa-eye"></i>
-                            <span>98</span>
+                            <span id="view-count-{{ $gallery->id }}">{{ $gallery->views }}</span>
                         </span>
 
                         <span class="flex items-center gap-1">
                             <i class="fa-solid fa-heart text-red-500"></i>
-                            <span>32</span>
+                            <span id="like-count-{{ $gallery->id }}">{{ $gallery->likes }}</span>
                         </span>
 
                     </div>
@@ -63,5 +64,59 @@
         @endforelse
 
     </section>
+    <div id="imageOnlyModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50"
+        onclick="closeImageOnly()">
+
+        <img id="imageOnlySrc" class="max-w-[90%] max-h-[90%] rounded-lg">
+    </div>
+    <script>
+        let liking = false;
+        function openImageOnly(id, image) {
+
+            // STEP 1: popup image দেখানো
+            document.getElementById('imageOnlySrc').src = image;
+            document.getElementById('imageOnlyModal').classList.remove('hidden');
+            document.getElementById('imageOnlyModal').classList.add('flex');
+
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            // STEP 2: VIEW বাড়ানো (AJAX)
+            fetch(`/gallery/view/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById(`view-count-${id}`).innerText = data.views;
+                })
+                .catch(err => console.error('View error:', err));
+
+            // like
+            if (liking) return;
+            liking = true;
+
+            fetch(`/gallery/like/${id}`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    liking = false;
+                    document.getElementById(`like-count-${id}`).innerText = data.likes;
+                });
+
+        }
+
+        function closeImageOnly() {
+            document.getElementById('imageOnlyModal').classList.add('hidden');
+            document.getElementById('imageOnlyModal').classList.remove('flex');
+        }
+
+    </script>
 
 </main>
