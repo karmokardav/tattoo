@@ -1,4 +1,4 @@
-<section class="overflow-y-auto h-screen scrollbar-hide p-6">
+<section class="overflow-y-auto scrollbar-hide p-6">
 
         <!-- Employee Detail -->
         <div class="bg-[#aaa9a9] rounded-2xl p-6 shadow-lg ">

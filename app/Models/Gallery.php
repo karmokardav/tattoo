@@ -12,7 +12,7 @@ class Gallery extends Model
         'image',
         'views',
         'likes',
-        'status'
+        'status',
     ];
 
     public function likes()

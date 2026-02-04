@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
@@ -35,20 +36,29 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/galleries/list', [GalleryController::class, 'list'])->name('galleries.list');
     Route::get('/galleries/form', [GalleryController::class, 'form'])->name('galleries.form');
 
+    Route::resource('blogs', BlogController::class)->only([
+        'index',
+        'store',
+        'update',
+        'destroy'
+    ]);
+    Route::get('/blogs/list', [BlogController::class, 'list'])->name('blogs.list');
+    Route::get('/blogs/form', [BlogController::class, 'form'])->name('blogs.form');
+
 });
 
 
 
 Route::get('galleries', [GalleryController::class, 'index'])->name('galleries.index');
-// Route::get('galleries/{id}', [GalleryController::class, 'show'])->name('galleries.show');
 Route::post('/gallery/view/{gallery}', [GalleryController::class, 'view']);
 Route::post('/gallery/like/{gallery}', [GalleryController::class, 'like']);
 
+Route::get("/blogs", [BlogController::class, 'index'])->name('blogs.index');
+Route::post("/blog/view/{blog}", [BlogController::class, 'view']);
 
 
-Route::get("/blog", function () {
-    return view("blog.blog");
-});
+
+
 Route::get("/dashboard", function () {
     return view("dashboard.dashboard");
 });

@@ -1,6 +1,6 @@
 <section class="py-24">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-white">Last Works</h2>
+        <h2 class="text-3xl font-bold text-white">Blog</h2>
         <div class="w-30 h-1 bg-[#9c1428] mt-2 mb-8"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div class="relative  overflow-hidden shadow-lg group">

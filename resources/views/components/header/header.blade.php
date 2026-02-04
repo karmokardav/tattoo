@@ -9,7 +9,7 @@
     <ul class="hidden md:flex gap-8 text-lg">
         <li><a href="/" class="hover:text-[#9c1428]">Home</a></li>
         <li><a href="{{ route('galleries.index') }}" class="hover:text-[#9c1428]">Gallery</a></li>
-        <li><a href="/blog" class="hover:text-[#9c1428]">Blog</a></li>
+        <li><a href="{{ route('blogs.index') }}" class="hover:text-[#9c1428]">Blog</a></li>
         <li><a href="/about" class="hover:text-[#9c1428]">About</a></li>
         <li><a href="/contact" class="hover:text-[#9c1428]">Contact</a></li>
     </ul>
